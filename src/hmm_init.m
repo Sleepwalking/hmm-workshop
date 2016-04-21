@@ -6,6 +6,9 @@ function [h] = hmm_init(h, O, s)
   for i = 1:N
     iidx = find(s == i);
     iidx_o = O(iidx);
+    if(length(iidx) == 0)
+      continue;
+    end
     for k = 1:K
       h.B(i, k) = sum(iidx_o == k) / length(iidx);
     end

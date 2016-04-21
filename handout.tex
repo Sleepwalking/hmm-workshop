@@ -273,11 +273,11 @@ J(\lambda) &= \sum_\mathbf{s} Q(\mathbf{s}) \log \frac{P(O, \mathbf{s} | \lambda
   &= \frac{1}{a_{ij}} \sum_{t=2}^T \gamma_t(i, j)
 \intertext{To make sure $\sum_j a_{ij} = 1 \ \forall i$, introduce Lagrange multiplier $l$,}
 &\begin{cases}
-  \sum_{t=2}^T \gamma_t(i, j) &= \lambda a_{ij} \\
+  \sum_{t=2}^T \gamma_t(i, j) &= l a_{ij} \\
   \sum_j a_{ij} &= 1
 \end{cases}
 \intertext{Solve the equations,}
-a_{ij} &= \frac{\sum_{t=2}^T \gamma_t(i, j)}{\sum_{t=2}^T \sum_n \gamma_t(i, n)} = \frac{\sum_{t=2}^T \gamma_t(i, j)}{\sum_{t=2}^T \gamma_{t-1}(i)}
+l &= \sum_{t=2}^T \sum_n \gamma_t(i, n), \quad a_{ij} = \frac{\sum_{t=2}^T \gamma_t(i, j)}{\sum_{t=2}^T \sum_n \gamma_t(i, n)} = \frac{\sum_{t=2}^T \gamma_t(i, j)}{\sum_{t=2}^T \gamma_{t-1}(i)}
 \intertext{Similarly for $\pi_i$ and $b_{ik}$ (discrete case) we get,}
 \pi_i &= \gamma_1(i) \\
 b_{ik} &= \frac{\sum_{t: o_t = k} \gamma_t(i)}{\sum_{t=1}^T \gamma_t(i)}

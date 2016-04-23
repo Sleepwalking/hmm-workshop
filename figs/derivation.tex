@@ -1,0 +1,34 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath}
+
+\begin{document}
+
+\begin{align*}
+\underset{s_1, ..., s_t}{\arg\max\ } P(o_1, ..., o_t, s_1, ..., s_t | \lambda) \\
+\end{align*}
+
+\begin{align*}
+& P(o_1, o_2, ..., o_t, s_t = j | \lambda) \\
+&= \sum_{s_1, ..., s_{t-1}} P(o_1, ..., o_t, s_1, ..., s_{t-1}, s_t = j | \lambda) \\
+&= \sum_\mathbf{s} \pi_{s_1} b_{s_1}(o_1) \prod_{\tau=2}^t a_{s_{\tau-1},s_\tau} b_{s_\tau}(o_\tau) \\
+\alpha_t(j)
+&= P(o_1, o_2, ..., o_t, s_t=j | \lambda) \\
+  &= \sum_i P(o_1, ..., o_t, s_t=j, s_{t-1}=i | \lambda) \\
+  &= \sum_i P(o_1, ..., o_t | s_t=j, s_{t-1}=i, \lambda) P(s_t=j, s_{t-1}=i | \lambda) \\
+  &= \sum_i P(o_t | s_t=j, \lambda) P(o_1, ..., o_{t-1} | s_{t-1}=i, \lambda) P(s_t=j, s_{t-1}=i | \lambda) \\
+  &= P(o_t | s_t=j, \lambda) \sum_i P(o_1, ..., o_{t-1}, s_{t-1}=i | \lambda) P(s_t=j | s_{t-1}=i, \lambda) \\
+  &= b_j(o_t) \sum_i a_{ij} \alpha_{t-1}(i) \\
+\alpha^*_t(j)
+&= \max_{s_1, ..., s_{t-1}} P(o_1, ..., o_t, s_1, ..., s_{t-1}, s_t=j | \lambda) \\
+&= \max_i \max_{s_1, ..., s_{t-2}} P(o_1, ..., o_t, s_1, ..., s_{t-2}, s_{t-1}=i, s_t=j | \lambda) \\
+&= b_j(o_t) \max_i a_{ij} \alpha^*_{t-1}(i) \\
+p^*_t(j)
+&= \underset{i}{\arg\max\ } a_{ij} \alpha^*_{t-1}(i) \\
+\gamma_t(j)
+  &= P(s_t=j | O, \lambda) \\
+  &= \frac{P(o_1, ..., o_T | s_t=j, \lambda) P(s_t=j | \lambda)}{P(O | \lambda)} \\
+  &= \frac{P(o_1, ..., o_t | s_t=j, \lambda) P(s_t=j | \lambda) P(o_{t+1}, ..., o_T | s_t=j, \lambda)}{P(O | \lambda)} \\
+  &= \frac{\alpha_t(j) \beta_t(j)}{P(O | \lambda)}
+\end{align*}
+
+\end{document}

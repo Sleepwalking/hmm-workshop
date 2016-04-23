@@ -218,7 +218,7 @@ P(O | \lambda) &= \sum_j P(o_1, ..., o_t, o_{t+1}, ..., o_T, s_t=j | \lambda) \\
                &= \sum_j \alpha_t(j) \beta_t(j) \textrm{\quad (from both forward and backward probability, for arbitrary $t$)}
 \intertext{\textbf{State Occupancy Probability}}
 \gamma_t(j) &= P(s_t=j | O, \lambda) \\
-            &= \frac{P(o_1, ..., o_t, s_t=j, \lambda) P(o_{t+1}, ..., o_T | s_t=j, \lambda)}{P(O | \lambda)} \\
+            &= \frac{P(o_1, ..., o_t, s_t=j | \lambda) P(o_{t+1}, ..., o_T | s_t=j, \lambda)}{P(O | \lambda)} \\
             &= \frac{\alpha_t(j) \beta_t(j)}{P(O | \lambda)}
 \intertext{note that $\sum_j \gamma_t(j) = 1$}
 \intertext{\textbf{State Transition Probability} (not to be confused with $a_{ij}$)}

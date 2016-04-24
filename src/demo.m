@@ -24,10 +24,16 @@ h2 = h; % create a copy
 % create a vector for total likelihood in each iteration
 T = zeros(10, 1);
 for i = 1:10 % training
-  disp(sprintf('Iteration %d...', i));
-  %[h2 t] = hmm_viterbitrain(h2, O);
-  [h2 t] = hmm_baumwelch(h2, O);
+  %[a b t] = hmm_forwardbackward(h2, O);
+  %h2 = hmm_viterbitrain(h2, O);
+  [h2 t a b] = hmm_baumwelch(h2, O);
   T(i) = t;
+
+  plot(exp(a + b - t), 'linewidth', 1);
+  title(sprintf('State occupancy probability at iteration %d', i));
+  xlim([1 500]);
+  ylim([-0.5 1.5]);
+  sleep(0.01);
 end
 
 % align and compare

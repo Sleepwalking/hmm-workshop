@@ -1,4 +1,4 @@
-function [h total] = hmm_baumwelch(h, O)
+function [h total a b] = hmm_baumwelch(h, O)
   N = size(h.A, 1);
   T = size(O, 1);
   [a b total] = hmm_forwardbackward(h, O);

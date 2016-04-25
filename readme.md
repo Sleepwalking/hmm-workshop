@@ -7,6 +7,13 @@ Time: 7:00PM-9:00PM. Apr. 27, 2016.
 
 Location: Room 2013, ECE Building
 
+Links
+---
+
+[`libgvps`](https://github.com/Sleepwalking/libgvps): Generic Viterbi Path Searcher
+
+[`libpyin`](https://github.com/Sleepwalking/libpyin): Probabilistic YIN pitch estimator
+
 License
 ---
 

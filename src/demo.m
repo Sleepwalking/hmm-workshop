@@ -33,7 +33,7 @@ for i = 1:10 % training
   title(sprintf('State occupancy probability at iteration %d', i));
   xlim([1 500]);
   ylim([-0.5 1.5]);
-  sleep(0.01);
+  pause(0.5);
 end
 
 % align and compare

@@ -28,7 +28,7 @@ All slides, handout and codes, are summarized from the following sources,
 * Ng, Andrew. "Mixtures of Gaussians and the EM algorithm." Stanford University. CS229 Lecture Notes (2014).
 * Bilmes, Jeff A. "A gentle tutorial of the EM algorithm and its application to parameter estimation for Gaussian mixture and hidden Markov models." International Computer Science Institute 4.510 (1998): 126.
 
-The sounds under `data/` are obtained from [freesound.org](freesound.org):
+The sounds under `data/` are obtained from [freesound.org](http://freesound.org):
 
 [`guitar-clean-rif.wav`](http://www.freesound.org/people/LG/sounds/16054/) by LG
 

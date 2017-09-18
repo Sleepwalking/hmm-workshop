@@ -223,7 +223,7 @@ P(O | \lambda) &= \sum_j P(o_1, ..., o_t, o_{t+1}, ..., o_T, s_t=j | \lambda) \\
 \intertext{note that $\sum_j \gamma_t(j) = 1$}
 \intertext{\textbf{State Transition Probability} (not to be confused with $a_{ij}$)}
 \gamma_t(i, j) &= P(s_{t-1}=i, s_t=j | O, \lambda) \\
-               &= \alpha_{t-1}(i) \beta_t(j) b_j(o_t) a_{ij} \quad\textrm{whose derivation ii similar to $\gamma_t(j)$}
+               &= \frac{\alpha_{t-1}(i) \beta_t(j) b_j(o_t) a_{ij}}{P(O | \lambda)} \quad\textrm{whose derivation is similar to $\gamma_t(j)$}
 \end{align*}
 
 \newpage
